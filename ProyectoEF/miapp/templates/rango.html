@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{Rango}}
+{% endblock %}
+
+{% block content %}
+    <h1 class="title">Números de [{{a}}, {{b}}] </h1>
+    <ul>
+        {% for rango_numeros in rango_numeros %}
+            <li>{{rango_numeros}}</li>
+        {% empty %}
+            Rango Vació
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html land="es">
+    <head>
+        <meta charset="utf-8" />
+        <titel>
+            {% block title %}
+
+            {% endblock %}
+            | Chavez
+        </title>
+        {% load static %}
+        <link rel="Stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    </head>
+    <body>
+        <header id="logo">
+            <div >
+                <img src="{% static 'images/logo.png' %}" />
+                <h1> Proyecto web (LP3) | Chavez Jhon </h1>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'inicio' %}" > Inicio </a>
+                </li>
+                <li>
+                    <a href="{% url 'saludo' %}" > Mensaje de Saludo </a>
+                </li>
+                <li>
+                    <a href="{% url 'rango' %}" > Mostrar Números [a,b] </a>
+                </li>
+                <li>
+                    <a href="{% url 'rango2' %}" > Mostrar Números [10,15] </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="barra">
+            <span class="esquina-izquierda" ></span>
+            <span class="relleno-barra" ></span>
+            <span class="esquina-derecha" ></span>
+        </div>
+
+        <div id="content">
+            <div>
+                {% block content %}
+                <strong> Contenido en layout (Padre) </strong>
+                {% endblock %}
+            </div>
+        </div>
+        <footer>
+            UNTELS - Lenguaje de Programación III &copy; Chavez Jhon - {% now "d/m/y h:m:s" %}
+        </footer>
+    </body>
+</html>
